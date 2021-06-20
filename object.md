@@ -37,6 +37,45 @@ function makeObject(name,age){
 
 name:name은 name과 변수인 name이 동일하기 때문에 생략이 가능하다.
 
+# Object method
+## Object.assign() : 객체 복제
+```
+const user = {name:moon, age:23}
+const a= user;
+❌
+```
+a에는 객체가 아닌 참조값만 복사된다.
+```
+const a= Object.assign({}, user);
+```
+## Object.keys() : 키 배열 반환
+```
+Object.keys(user)
+```
+결과값👉
+
+[ 'name', 'age' ]
+
+## Object.values() : 값 배열 반환
+```
+Object.values(user)
+```
+결과값👉
+
+[ 'moon', 23 ]
+
+## Object.entries() : 키/값 배열 반환
+```
+Object.entries(user)
+```
+결과값👉
+
+[ [ 'name', 'moon' ], [ 'age', 23 ] ]
+
+## Object.fromEntries() : 키/값 배열을 객체로
+
+<hr/>
+
 # Array
 ```
 let days=['월','화','수'];
@@ -65,4 +104,15 @@ days.shift();
 [ '일', '월', '화', '수' ]
 
 [ '월', '화', '수' ]
+
+# 변수
+var:함수 스코프
+
+let,const:블록 스코프
+```
+function add(){}
+if(){}
+for(){}
+```
+let,const:코드블록에서 선언된 것은 코드블록 내에서만 유효함.
 
