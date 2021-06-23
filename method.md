@@ -138,7 +138,7 @@ console.log(result); //15
 let userList = [{name:'a',age:1},{name:'b',age:2},{name:'c',age:3},{name:'d',age:4}];
 let result = userList.reduce((prev,cur)=>{
     if(cur.age > 2){
-        prev.push(cur.name);
+        prev.push(cur.name); 
     }
     return prev;
 },[]);

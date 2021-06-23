@@ -116,3 +116,27 @@ for(){}
 ```
 let,const:코드블록에서 선언된 것은 코드블록 내에서만 유효함.
 
+## Closure : 
+함수가 생성될 당시의 외부 변수를 기억하여, 생성 이후에도 계속 접근 가능.
+```
+function Add(x){
+    return function(y){
+        return x + y;
+    }
+}
+const add3=Add(3);
+console.log(add3(2)); // 👉5
+console.log(add3(10)); // 👉13
+**************************
+function Cnt(){
+    let num=0;
+    return function(){
+        return num++;
+    };
+}
+let count=Cnt();
+console.log(Count()); // 👉0
+console.log(Count()); // 👉1
+console.log(Count()); // 👉2
+```
+

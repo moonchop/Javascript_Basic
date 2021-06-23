@@ -1,5 +1,8 @@
-let days=['월','화','수'];
-days.unshift('일');
-console.log(days);
-days.shift();
-console.log(days)
+function Add(x){
+    return function(y){
+        return x + y;
+    }
+}
+const add3=Add(3);
+console.log(add3(2)); // 👉5
+console.log(add3(10)); // 👉15
