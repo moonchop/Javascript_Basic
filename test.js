@@ -1,8 +1,13 @@
-function Add(x){
-    return function(y){
-        return x + y;
-    }
+function* fn(){
+    console.log(1);
+    yield 1; // a.next()하면 여기까지 찍힘
+    console.log(2);
+    yield 2; // 한번 더 a.next()하면 여기까지 찍힘
+    console.log(3);
+    console.log(4);
+    yield 3; // 한번 더 a.next()하면 여기까지 찍힘
+    
+    return "finish"  
 }
-const add3=Add(3);
-console.log(add3(2)); // 👉5
-console.log(add3(10)); // 👉15
+const a=fn();
+console.log(a.next(),a.next(),a.next(),a.next());
